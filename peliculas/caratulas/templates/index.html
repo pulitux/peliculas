@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Caratulas</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'estilos/estilos.css'%}">
+</head>
+<body>
+<h1 style="color:blue;">Caratulas de las peliculas</h1>
+
+<table border="1" width="400">
+        <tr>
+            <th>TITULO</th>
+            <th>CARATULA</th>
+        </tr>
+        {% for titulo, caratula in lista_caratulas %}
+
+            <tr>
+                <td>{{titulo}}</td>
+                <td><img src = "{% static 'carteles/'%}{{caratula}}" width="300" height="150"/></td>
+            </tr>
+       {% endfor%}
+</table>
+</body>
+</html>
